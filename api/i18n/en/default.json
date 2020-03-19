@@ -1,0 +1,4 @@
+{
+  "BULL_SENT": "Message has been successfully send to Bull with data : {name}",
+  "TCP_SENT": "Message has been successfully send to TCP with data : {name}"
+}

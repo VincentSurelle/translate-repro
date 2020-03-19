@@ -1,0 +1,27 @@
+version: "3"
+services:
+  api:
+    image: node:lts-alpine
+    working_dir: /app
+    command: npx @nestjs/cli start -w
+    volumes:
+      - ./api:/app
+    ports:
+      - "3000:3000"
+  bull-redis:
+    image: node:lts-alpine
+    working_dir: /app
+    command: npx @nestjs/cli start -w
+    volumes:
+      - ./bull-redis:/app
+  tcp:
+    image: node:lts-alpine
+    working_dir: /app
+    command: npx @nestjs/cli start -w
+    volumes:
+      - ./tcp:/app
+  redis:
+    container_name: redis-bull-test
+    image: redis:alpine
+    ports:
+      - 6379:6379
